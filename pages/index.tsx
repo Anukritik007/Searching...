@@ -1,12 +1,18 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import { ResourceCard } from "../components/molecules/ResourceCard/ResourceCard";
+import ThemeSwitcher from "../components/atoms/ThemeSwitcher";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div className="bg-gradient-to-r from-cyan-500 to-blue-500 dark:from-indigo-500 dark:to-black">
       <main className={styles.main}>
-        <h1 className={styles.title}>resourceful</h1>
+        <h1 className={styles.title}>
+          resourceful
+          <span className="mx-4">
+            <ThemeSwitcher></ThemeSwitcher>
+          </span>
+        </h1>
 
         <section className={styles.topResources}>
           {/* temporary content */}
