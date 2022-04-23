@@ -12,6 +12,17 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="One-stop finder for resources of any kind posted by community of the like."
         />
         <link rel="icon" href="/favicon.ico" />
+        {/* google fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href={"https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap"}
+          rel="stylesheet"
+        />
       </Head>
 
       <Component {...pageProps} />

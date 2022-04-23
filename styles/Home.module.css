@@ -1,5 +1,6 @@
 .container {
   padding: 0 2rem;
+  background-image: linear-gradient(to right top, #7758c2, #7a78ce, #8795d5, #9eafd8, #bec8d8);
 }
 
 .main {
@@ -14,9 +15,13 @@
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 6rem;
+  font-family: 'Ms Madi', cursive;
+  text-align: center;
+  margin-top: 0;
 }
 
-.title {
-  text-align: center;
+.topResources {
+  display: flex;
+  justify-content: space-around;
 }
