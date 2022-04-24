@@ -1,8 +1,3 @@
-.container {
-  padding: 0 2rem;
-  background-image: linear-gradient(to right top, #7758c2, #7a78ce, #8795d5, #9eafd8, #bec8d8);
-}
-
 .main {
   min-height: 90vh;
   padding: 4rem 0;
@@ -16,7 +11,7 @@
 
 .title {
   font-size: 6rem;
-  font-family: 'Ms Madi', cursive;
+  font-family: "Ms Madi", cursive;
   text-align: center;
   margin-top: 0;
 }
