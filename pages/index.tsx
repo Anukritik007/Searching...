@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           resourceful
           <span className="mx-4">
-            <ThemeSwitcher></ThemeSwitcher>
+            <ThemeSwitcher />
           </span>
         </h1>
 

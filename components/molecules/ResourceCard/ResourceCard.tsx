@@ -38,7 +38,10 @@ export const ResourceCard = ({ title, imgUrl, content }: ResourceCardProps) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }} className="bg-white dark:bg-black text-black dark:text-white">
+    <Card
+      sx={{ maxWidth: 345 }}
+      className="bg-white dark:bg-black text-black dark:text-white"
+    >
       <CardHeader
         action={
           <IconButton aria-label="settings">
@@ -54,20 +57,21 @@ export const ResourceCard = ({ title, imgUrl, content }: ResourceCardProps) => {
         image={imgUrl}
         alt="Resource preview"
       />
-      <CardContent >
-        <Typography 
-          variant="body2" 
+      <CardContent>
+        <Typography
+          variant="body2"
           className="bg-white dark:bg-black text-black dark:text-white"
-          color="text.secondary">
+          color="text.secondary"
+        >
           {content}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon className="text-black dark:text-white"/>
+          <FavoriteIcon className="text-black dark:text-white" />
         </IconButton>
         <IconButton aria-label="share">
-          <ShareIcon className="text-black dark:text-white"/>
+          <ShareIcon className="text-black dark:text-white" />
         </IconButton>
         <ExpandMore
           expand={expanded}
@@ -75,7 +79,7 @@ export const ResourceCard = ({ title, imgUrl, content }: ResourceCardProps) => {
           aria-expanded={expanded}
           aria-label="show more"
         >
-          <ExpandMoreIcon />
+          <ExpandMoreIcon className="text-black dark:text-white" />
         </ExpandMore>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
