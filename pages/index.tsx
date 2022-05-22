@@ -1,9 +1,15 @@
 import type { NextPage } from "next";
+import { useSelector } from "react-redux";
 import styles from "../styles/Home.module.css";
 import { ResourceCard } from "../components/molecules/ResourceCard/ResourceCard";
 import ThemeSwitcher from "../components/atoms/ThemeSwitcher";
+import { initStore } from "../redux/store";
+import { IResource, IAppState } from "../interfaces/Interfaces";
+// import { getAllResources } from "../redux/resources/resourcesActions";
 
 const Home: NextPage = () => {
+  const { data } = useSelector((state: IAppState) => state.resources);
+
   return (
     <div className="bg-gradient-to-r from-cyan-500 to-blue-500 dark:from-indigo-500 dark:to-black">
       <main className={styles.main}>
@@ -15,17 +21,14 @@ const Home: NextPage = () => {
         </h1>
 
         <section className={styles.topResources}>
-          {/* temporary content */}
-          <ResourceCard
-            title="Meet Anukritik"
-            imgUrl="/images/aunixWebsite.png"
-            content="Portfolio of Anukritik, an experienced Software engineer. I have a passion for coding, and enjoy bringing ideas to life in the browser."
-          />
-          <ResourceCard
-            title="Meet Mayank"
-            imgUrl="/images/mukkusWebsite.png"
-            content="Portfolio of Mayank Agrawal, an experienced Software engineer."
-          />
+          {data &&
+            data.map((resource: IResource) => (
+              <ResourceCard
+                title={resource.name}
+                imgUrl={resource.previewImgUrl}
+                description={resource.description}
+              />
+            ))}
         </section>
       </main>
 
@@ -34,4 +37,9 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+Home.getInitialProps = async ({ store }) => {
+  // return store?.dispatch(getAllResources());
+  return {};
+};
+
+export default initStore.withRedux(Home);
